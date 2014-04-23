@@ -1,0 +1,31 @@
+<div class="col-sm-4 col-sm-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">TodoMVC with ES6 and Animate.css</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li ng-repeat="album in albums">
+          <div ng-show="!album.editing">
+            <b>{{album.title}}</b>
+            <i>{{album.band}}</i>
+            {{album.year}}
+            <a ng-click="album.editing=true;">edit</a>
+          </div>
+          <div ng-show="album.editing">
+            <input ng-model="album.title" placeholder="Title">
+            <input ng-model="album.band" placeholder="Band">
+            <input ng-model="album.year" placeholder="Year">
+            <button ng-click="update(album)">update</button>
+          </div>
+        </li>
+        <li>
+          <input ng-model="newAlbum.title" placeholder="Title">
+          <input ng-model="newAlbum.band" placeholder="Band">
+          <input ng-model="newAlbum.year" placeholder="Year">
+          <button ng-click="add()">add</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
